@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>태양광 발전량 분석 보고서</title>
+  <style>
+    body { max-width: 900px; margin: 40px auto; padding: 0 20px; color: #202938; font: 16px/1.6 system-ui, sans-serif; }
+    h1 { margin-bottom: 4px; } h2 { margin-top: 32px; border-bottom: 1px solid #d7dde5; padding-bottom: 6px; }
+    table { width: 100%; border-collapse: collapse; } th, td { text-align: left; padding: 9px 10px; border-bottom: 1px solid #e6e9ee; }
+    th { width: 34%; color: #475467; } .meta { color: #667085; font-size: 14px; }
+    .note { background: #f4f7fb; padding: 14px 18px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>태양광 발전량 분석 보고서</h1>
+  <p class="meta">생성 시각: 2026-11-03T04:19:02+00:00<br>
+  업로드 파일명: 고리태양광_분석용 (1).csv<br>
+  유효 데이터 기준 기간: 2023-01-01 ~ 2026-01-02<br>
+  현재 필터 데이터 실제 기간: 2023-01-01 01:00 ~ 2026-01-02 00:00</p>
+
+  <h2>현재 필터 조건</h2>
+  <table><tbody><tr><th>기간 필터</th><td>2023-01-01 ~ 2026-01-02</td></tr><tr><th>발전기 필터</th><td>전체 (1개)</td></tr><tr><th>시간대 필터</th><td>전체</td></tr><tr><th>기온 필터</th><td>-10.40 ~ 38.70 °C</td></tr></tbody></table>
+
+  <h2>핵심 지표</h2>
+  <table><tbody><tr><th>총 계량전력량</th><td>7,781,688.41 kWh</td></tr><tr><th>평균 기온</th><td>16.13 °C</td></tr><tr><th>평균 일사량</th><td>0.61 MJ/m²</td></tr><tr><th>분석 데이터 건수</th><td>26,328행</td></tr><tr><th>일사량-발전량 피어슨 상관계수</th><td>r = 0.935 (유효 짝 26,328개)</td></tr></tbody></table>
+
+  <h2>일별 추세 요약</h2>
+  <ul><li>관측 일자 수: 1,098일</li><li>일별 합계 최대: 2023-04-09, 12,201.72 kWh</li><li>일별 합계 최소: 2023-11-23, 0.00 kWh</li><li>관측 일별 합계 평균: 7,087.15 kWh/일</li><li>일별 합계 선형 추세 기울기: +0.024 kWh/일 (양수는 증가 방향, 음수는 감소 방향)</li></ul>
+
+  <h2>시간대별 특징</h2>
+  <ul><li>관측 시간대 수: 24개</li><li>평균이 가장 높은 시간대: 13시, 1,017.20 kWh/행 (관측 1,097행)</li><li>평균이 가장 낮은 시간대: 00시, 0.00 kWh/행 (관측 1,097행)</li></ul>
+
+  <h2>데이터 처리 및 결측</h2>
+  <table><tbody><tr><th>업로드 행</th><td>26,328</td></tr><tr><th>중복 제거 행</th><td>0</td></tr><tr><th>결측·변환 오류로 제외된 행</th><td>0</td></tr><tr><th>현재 필터 분석 행</th><td>26,328</td></tr><tr><th>날짜·시간 변환 실패 행</th><td>0</td></tr><tr><th>계량전력량 (kWh) 숫자 변환 실패</th><td>0</td></tr><tr><th>기온 (°C) 숫자 변환 실패</th><td>0</td></tr><tr><th>일사량 (MJ/m²) 숫자 변환 실패</th><td>0</td></tr><tr><th>분석용 일시 결측 셀</th><td>0</td></tr><tr><th>발전기 결측 셀</th><td>0</td></tr><tr><th>계량전력량 (kWh) 결측 셀</th><td>0</td></tr><tr><th>기온 (°C) 결측 셀</th><td>0</td></tr><tr><th>일사량 (MJ/m²) 결측 셀</th><td>0</td></tr></tbody></table>
+
+  <h2>해석 한계</h2>
+  <ul>
+    <li>통계는 현재 필터가 적용된 유효 행만 사용하며, 중복 및 결측·변환 오류 행은 분석에서 제외합니다.</li>
+    <li>분석 범위는 업로드 CSV에 포함된 유효 기간에 한정되며, 업로드되지 않은 기간은 반영하지 않습니다.</li>
+    <li>피어슨 r은 두 변수의 선형 상관관계이며 인과관계를 의미하지 않습니다.</li>
+    <li>주간과 야간 데이터가 섞이면 시간대 차이가 상관계수에 영향을 줄 수 있습니다.</li>
+    <li>일별 합계는 선택한 발전기의 행을 날짜별로 합산하고, 시간대별 값은 관측 행별 산술 평균으로 계산합니다.</li>
+    <li>이 보고서에는 원본 CSV 전체 행이 포함되지 않고 요약 통계만 포함됩니다.</li>
+  </ul>
+  <p class="note">일별 합계와 시간대별 평균은 모두 현재 필터 결과에서 계산했습니다.</p>
+</body>
+</html>
